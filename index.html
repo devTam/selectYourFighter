@@ -23,31 +23,58 @@
         <div class="image-select">
             <ul class="image-select-list">
                 <li class="image-select-list-item">
-                    <a href="images/Tokita_Ohma.png"><img src="images/Tokita_Ohma.png" alt="TOKITA OHMA"></a>
+                    <a href="images/Tokita_Ohma.png"
+                    title= "TOKITA OHMA"">
+                        <img src="images/Tokita_Ohma.png">
+                    </a>
                 </li>
                 <li class="image-select-list-item">
-                    <a href="images/lihito.png"><img src="images/lihito.png" alt="LIHITO"></a>
+                    <a href="images/lihito.png"
+                    title="LIHITO">
+                        <img src="images/lihito.png">
+                    </a>
                 </li>
                 <li class="image-select-list-item">
-                    <a href="images/inaba_ryo.png"><img src="images/inaba_ryo.png" alt="INABA RYO"></a>
+                    <a href="images/inaba_ryo.png"
+                    title="INABA RYO">
+                        <img src="images/inaba_ryo.png">
+                    </a>
+                    </li>
+                <li class="image-select-list-item">
+                    <a href="images/meguro_masaki.png"
+                    title="MEGURO MASAKI">
+                        <img src="images/meguro_masaki.png">
+                    </a>
                 </li>
                 <li class="image-select-list-item">
-                    <a href="images/meguro_masaki.png"><img src="images/meguro_masaki.png" alt="MEGURO MASAKI"></a>
-                </li>
-                <li class="image-select-list-item">
-                    <a href="images/imai_cosmo.png"><img src="images/imai_cosmo.png" alt="COSMO IMAI"></a>
+                    <a href="images/imai_cosmo.png"
+                    title="COSMO IMAI">
+                        <img src="images/imai_cosmo.png">
+                    </a>
                 </li>     
                 <li class="image-select-list-item">
-                    <a href="images/adam_dudley.png"><img src="images/adam_dudley.png" alt="ADAM DUDLEY"></a>
+                    <a href="images/adam_dudley.png"
+                    title="ADAM DUDLEY">
+                        <img src="images/adam_dudley.png">
+                    </a>
                 </li>     
                 <li class="image-select-list-item">
-                    <a href="images/kiryu_setsuna.png"><img src="images/kiryu_setsuna.png" alt="KIRYU SETSUNA"></a>
+                    <a href="images/kiryu_setsuna.png"
+                    title="KIRYU SETSUNA">
+                        <img src="images/kiryu_setsuna.png">
+                    </a>
                 </li>     
                 <li class="image-select-list-item">
-                    <a href="images/yoroizuka_saw_paing.png"><img src="images/yoroizuka_saw_paing.png" alt="YOROIZUKA SAW"></a>
+                    <a href="images/yoroizuka_saw_paing.png"
+                    title="YOROIZUKA SAW">
+                        <img src="images/yoroizuka_saw_paing.png">
+                    </a>
                 </li>     
                 <li class="image-select-list-item">
-                    <a href="images/raian_kure.png"><img src="images/raian_kure.png" alt="RAIAN KURE"></a>
+                    <a href="images/raian_kure.png"
+                    title="RAIAN KURE">
+                        <img src="images/raian_kure.png">
+                    </a>
                 </li>     
             </ul>
         </div>
@@ -63,17 +90,17 @@
             e.preventDefault();
             svgDiv.style.display = "block";
             //CHANGING THE IMG SRC TO THE LINK HREF
-            let targetHref = e.target.closest('a').href;
+            let target = e.target.closest('a');
+            if(!target) return;
             let display = document.querySelector('.image-display--img');
-            display.src = targetHref;
+            display.src = target.href;
+            display.alt = target.title;
 
 
             // CHANGING THE TEXTNODE OF THE SVG TO THE IMG ALT TEXT
             let text = document.querySelector('#TOKITA_OHMA');
-            let targetAlt = e.target.closest('img').alt;
-            console.log(targetAlt);
             let textNode = text.childNodes[0];
-            textNode.nodeValue = `${targetAlt}`;
+            textNode.nodeValue = `${target.title}`;
             
         }
 
