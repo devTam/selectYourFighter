@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kengan Characters</title>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+    <div class="image">
+
+        <div class="image-display">
+            <div class="image-name">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4100 495">
+                    <text id="TOKITA_OHMA" data-name="TOKITA OHMA" fill="coral" font-size="385" font-family="SnapITC-Regular, Snap ITC">TOKITA OHMA</text>
+                  </svg>
+            </div>
+            <div class ="image-display-container">
+                <img class="image-display--img" src="images/unknown.jpg" alt="unknown">
+            </div>
+        </div>
+        <h2 class="select">select your fighter</h2>
+        <div class="image-select">
+            <ul class="image-select-list">
+                <li class="image-select-list-item">
+                    <a href="images/Tokita_Ohma.png"><img src="images/Tokita_Ohma.png" alt="TOKITA OHMA"></a>
+                </li>
+                <li class="image-select-list-item">
+                    <a href="images/lihito.png"><img src="images/lihito.png" alt="LIHITO"></a>
+                </li>
+                <li class="image-select-list-item">
+                    <a href="images/inaba_ryo.png"><img src="images/inaba_ryo.png" alt="INABA RYO"></a>
+                </li>
+                <li class="image-select-list-item">
+                    <a href="images/meguro_masaki.png"><img src="images/meguro_masaki.png" alt="MEGURO MASAKI"></a>
+                </li>
+                <li class="image-select-list-item">
+                    <a href="images/imai_cosmo.png"><img src="images/imai_cosmo.png" alt="COSMA IMAI"></a>
+                </li>     
+                <li class="image-select-list-item">
+                    <a href="images/adam_dudley.png"><img src="images/adam_dudley.png" alt="ADAM DUDLEY"></a>
+                </li>     
+                <li class="image-select-list-item">
+                    <a href="images/kiryu_setsuna.png"><img src="images/kiryu_setsuna.png" alt="KIRYU SETSUNA"></a>
+                </li>     
+                <li class="image-select-list-item">
+                    <a href="images/yoroizuka_saw_paing.png"><img src="images/yoroizuka_saw_paing.png" alt="YOROIZUKA SAW"></a>
+                </li>     
+                <li class="image-select-list-item">
+                    <a href="images/raian_kure.png"><img src="images/raian_kure.png" alt="RAIAN KURE"></a>
+                </li>     
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let list = document.querySelector('.image-select-list');
+        list.addEventListener('click', showImage);
+        let svgDiv = document.querySelector('.image-name');
+        svgDiv.style.display = "none";
+
+        function showImage(e) {
+            e.preventDefault();
+            svgDiv.style.display = "block";
+            //CHANGING THE IMG SRC TO THE LINK HREF
+            let targetHref = e.target.closest('a').href;
+            let display = document.querySelector('.image-display--img');
+            display.src = targetHref;
+
+
+            // CHANGING THE TEXTNODE OF THE SVG TO THE IMG ALT TEXT
+            let text = document.querySelector('#TOKITA_OHMA');
+            let targetAlt = e.target.closest('img').alt;
+            console.log(targetAlt);
+            let textNode = text.childNodes[0];
+            textNode.nodeValue = `${targetAlt}`;
+            
+        }
+
+
+    </script>
+</body>
+</html>

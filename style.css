@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.image {
+  height: 100vh;
+  width: 100%;
+  background-color: #eee;
+  overflow: hidden;
+  position: relative;
+  background: radial-gradient(#434343, #000);
+}
+
+.image-name {
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  top: 120px;
+  right: 100px;
+}
+
+.image-name svg {
+  height: 100%;
+  width: 100%;
+}
+
+.image-display {
+  height: 70vh;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.image-display-container {
+  width: 100%;
+  height: 100%;
+}
+
+.image-display--img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.image .select {
+  font-family: monospace;
+  text-align: center;
+  font-size: 30px;
+  background-color: coral;
+  text-transform: uppercase;
+}
+
+.image-select {
+  height: 30vh;
+}
+
+.image-select-list {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.image-select-list-item {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  padding: 15px 10px 10px 10px;
+  border: 5px solid #333;
+  border-right: none;
+  background: #283048;
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#859398), to(#283048));
+  background: linear-gradient(to right, #859398, #283048);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-transition: border .25s, -webkit-transform .25s;
+  transition: border .25s, -webkit-transform .25s;
+  transition: border .25s, transform .25s;
+  transition: border .25s, transform .25s, -webkit-transform .25s;
+}
+
+.image-select-list-item img {
+  height: 100%;
+  width: 100%;
+}
+
+.image-select-list-item:hover {
+  border: 6px solid green;
+}
+
+.image-select-list-item:hover img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.image-select-list-item img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding: 10px;
+  -webkit-transition: -webkit-transform .25s;
+  transition: -webkit-transform .25s;
+  transition: transform .25s;
+  transition: transform .25s, -webkit-transform .25s;
+}
+/*# sourceMappingURL=style.css.map */

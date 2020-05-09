@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
+.image {
+    height: 100vh;
+    width: 100%;
+    background-color: #eee;
+    overflow: hidden;
+    position: relative;
+    background: radial-gradient( #434343, #000);    
+    
+    &-name {
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        top: 120px;
+        right: 100px;
+
+        & svg {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    &-display {
+        height: 70vh;
+        width: 50%;
+        margin: 0 auto;
+
+        &-container {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        &--img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    .select {
+        font-family: monospace;
+        text-align: center;
+        font-size: 30px;
+        background-color: coral;
+        text-transform: uppercase;
+    }
+
+    &-select {
+        height: 30vh;
+
+        &-list {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+            &-item {
+                height: 100%;
+                width: 100%;
+                display: inline-block;
+                padding: 15px 10px 10px 10px;
+                border: 5px solid #333;
+                border-right: none;
+                background: #283048;
+                background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
+                background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                transition: border .25s,
+                transform .25s;
+
+                & img {
+                    height: 100%;
+                    width: 100%;
+                }
+                &:hover {
+                    border: 6px solid green;
+                }
+
+                &:hover img {
+                    transform: scale(1.2);
+                }
+
+                & img {
+                    object-fit: cover;
+                    padding: 10px;
+                    transition: transform .25s;
+                }
+            }
+        }
+    }
+}
